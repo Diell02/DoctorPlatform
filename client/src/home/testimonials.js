@@ -41,7 +41,9 @@ const Testimonials = () => {
                     "Unë rekomandoj DocPlat për këdo që kërkon një platformë 
                     të kujdesit shëndetësor të besueshëm dhe miqësor ndaj përdoruesit"
                   </Typography>
-                  <Typography variant="h6">- Bill</Typography>
+                  <div style={{ display: "flex" }}>
+                  <Typography variant="h6" style={{ color: "#cf2c2c" }}>- Bill</Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
@@ -64,7 +66,9 @@ const Testimonials = () => {
                     "Ndihesha i humbur dhe i mbingarkuar me problemet e mia shëndetësore, 
                     por DocPlat më lidhi me një mjek të shkëlqyer që u kujdes për mua."
                   </Typography>
-                  <Typography variant="h6">- Elon</Typography>
+                  <div style={{ display: "flex" }}>
+                  <Typography variant="h6" style={{ color: "#cf2c2c" }}>- Elon</Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
@@ -87,7 +91,9 @@ const Testimonials = () => {
                     "DocPlat e ka bërë shumë më të lehtë rezervimin e takimeve me mjekun tim.
                      Më pëlqen komoditeti që ofron!"
                   </Typography>
-                  <Typography variant="h6">- Warren</Typography>
+                  <div style={{ display: "flex" }}>
+                  <Typography variant="h6" style={{ color: "#cf2c2c" }}>- Warren</Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>

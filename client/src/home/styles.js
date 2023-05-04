@@ -3,7 +3,7 @@ export const titleToolbar = {
   borderBottom: 1,
   borderColor: "divider",
   backgroundColor: "#1a1a1a",
-  color: "#ffffff",
+  color: "#cf2c2c",
 };
 
 export const title = {
@@ -14,12 +14,15 @@ export const title = {
 
 export const navbarToolbar = {
   justifyContent: "space-between",
-  overflowX: "auto",
-  backgroundColor: "#FFFFFF",
+  overflowX: "hidden",
+  backgroundColor: "#cf2c2c",
 };
 
 export const link = {
-  p: 1,
+  pr: 16,
+  pl: 16,
+  pb: 1,
+  pt: 1,
   flexShrink: 0,
   textDecoration: "none",
   color: "#1a1a1a",
@@ -135,8 +138,14 @@ export const subtitle = {
 
 // TESTIMONIALS
 export const message = {
+  pt:1,
+  pb:1,
   fontFamily: "Raleway",
   fontStyle: "italic",
+  color: "#ffffff",
+  height: "200px",
+  overflow: "hidden",
+  fontSize: "17px",
 };
 
 export const testimonialsTitle = {
@@ -152,6 +161,7 @@ export const card = {
   height: "100%",
   display: "flex",
   flexDirection: "column",
+  backgroundColor: "#1a1a1a",
 };
 
 // FOOTER
