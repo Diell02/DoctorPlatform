@@ -7846,10 +7846,15 @@
   "resolved" "https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz"
   "version" "0.0.0"
 
-"jspdf@^2.5.0":
-  "integrity" "sha512-XT0E2m8A9P1xl7ItA2OUbmhokzbDQEyZEdWQZD2olADiTiBEZGDRiK1J1zWxBRUG2KezQJOZq//GYZTkvEZuJg=="
-  "resolved" "https://registry.npmjs.org/jspdf/-/jspdf-2.5.0.tgz"
-  "version" "2.5.0"
+"jspdf-autotable@^3.5.28":
+  "integrity" "sha512-eNYt5mUxCGa1Y0bmOhGXU+Va/P2jNkgOgUPGIpZp2rbZUauU34s0q3S59Jps5zi2u90nQy7DmD/D+sdesJLIEA=="
+  "resolved" "https://registry.npmjs.org/jspdf-autotable/-/jspdf-autotable-3.5.28.tgz"
+  "version" "3.5.28"
+
+"jspdf@^2.5.0", "jspdf@^2.5.1":
+  "integrity" "sha512-hXObxz7ZqoyhxET78+XR34Xu2qFGrJJ2I2bE5w4SM8eFaFEkW2xcGRVUss360fYelwRSid/jT078kbNvmoW0QA=="
+  "resolved" "https://registry.npmjs.org/jspdf/-/jspdf-2.5.1.tgz"
+  "version" "2.5.1"
   dependencies:
     "@babel/runtime" "^7.14.0"
     "atob" "^2.1.2"
