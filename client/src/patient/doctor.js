@@ -92,7 +92,7 @@ const Doctor = () => {
                   <Ratings uid={doctor.uid} />
                 </Grid>
 
-                <Grid item xs={9}>
+                <Grid item xs={8}>
                   <Reviews uid={doctor.uid} />
                 </Grid>
               </Grid>

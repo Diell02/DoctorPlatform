@@ -3,9 +3,9 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme();
 
 export const container = {
-  ml: 0, 
-  mr: 0, 
-  backgroundColor: "#0095de",
+  ml: 0,
+  mr: 0,
+  backgroundColor: "#D4AF37",
   width: "100%",
   position: "absolute",
   top: 0,
@@ -23,7 +23,6 @@ export const container = {
   },
 };
 
-
 export const paper = {
   mt: 10,
   p: 2,
@@ -32,28 +31,29 @@ export const paper = {
   mr: 30,
 };
 
-export const paperD = {
+export const paperA = {
   p: 2,
   display: "flex",
   flexDirection: "column",
-  mr: 20,
-  height: 270,
-};
-
-export const paperR = {
-  p: 2,
-  display: "flex",
-  flexDirection: "column",
-  mr: 20,
+  mr: 30,
 };
 
 export const paperi = {
+  mt: 10,
   p: 2,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  height: 270,
+  height: 330,
 };
+
+export const transparentPaper = {
+  p: 2,
+  display: "flex",
+  flexDirection: "column",
+  background: "transparent",
+};
+
 
 export const upload = {
   mt: 10,
@@ -63,11 +63,117 @@ export const upload = {
   alignItems: "center",
 };
 
-export const transparentPaper = {
-  p: 2,
+export const avatar = {
+  width: 200,
+  height: 200,
+};
+
+export const listItem = {
+  border: "2px solid #0d7da5",
+  borderRadius: "25px",
+  margin: "2px",
+  boxShadow: 2,
+  backgroundColor: "#e6f7fd",
+  "&:hover": {
+    backgroundColor: "#d0f0fb",
+    boxShadow: 3,
+    border: "3px solid #0d7da5",
+  },
+};
+
+export const listItemA = {
+  border: "1px solid #1a1a1a",
+  color: "#ffffff",
+  borderRadius: "25px",
+  margin: "2px",
+  boxShadow: 1,
+  backgroundColor: "#1a1a1a",
+  "&:hover": {
+    backgroundColor: "#000000",
+    boxShadow: 2,
+    border: "2px solid #000000",
+  },
+};
+
+export const listItemP = {
+  border: "1px solid #1a1a1a",
+  color: "#ffffff",
+  borderRadius: "25px",
+  margin: "2px",
+  boxShadow: 1,
+  backgroundColor: "#1a1a1a",
+  "&:hover": {
+    backgroundColor: "#000000",
+    boxShadow: 2,
+    border: "2px solid #000000",
+  },
+};
+
+export const typography = { fontWeight: "bold", color: "#1a1a1a", mt:10, mb:2 };
+
+export const confirmButton = {
+  backgroundColor: "#009900",
+  "&:hover": {
+    backgroundColor: "#006600",
+  },
+  color: "#ffffff",
+};
+
+export const cancelButton = {
+  backgroundColor: "#e60000",
+  "&:hover": {
+    backgroundColor: "#b30000",
+  },
+  color: "#ffffff",
+};
+
+export const signinGrid = {
+  backgroundImage: `url('images/Doctor_SignIn.png')`,
+  backgroundRepeat: "no-repeat",
+  backgroundColor: (t) =>
+    t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
+
+export const signupGrid = {
+  backgroundImage: `url("images/Doctor_SignUp.png")`,
+  backgroundRepeat: "no-repeat",
+  backgroundColor: (t) =>
+    t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
+
+export const box = {
+  my: 8,
+  mx: 4,
   display: "flex",
   flexDirection: "column",
-  background: "transparent",
+  alignItems: "center",
+};
+
+export const controls = {
+  top: "auto",
+  bottom: 0,
+  backgroundColor: "#021117",
+  alignItems: "center",
+};
+
+export const controlsToolbar = {
+  alignItems: "center",
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: "0",
+    marginLeft: "0",
+  },
+};
+
+export const listItemText = {
+  color: "#fff",
+};
+
+export const listItemIcon = {
+  color: "#fff",
 };
 
 export const gridItem = {
@@ -88,110 +194,10 @@ export const updateDetailsGridItem = {
   },
 };
 
-export const avatar = {
-  width: 200,
-  height: 200,
-};
-
-export const listItem = {
-  border: "2px solid #b30000",
-  borderRadius: "25px",
-  marginTop: "2px",
-  marginBottom: "2px",
-  marginLeft: 12,
-  width: "90%",
-  boxShadow: 2,
-  backgroundColor: "#1a1a1a",
-  "&:hover": {
-    backgroundColor: "#b30000",
-    boxShadow: 3,
-    border: "3px solid #1a1a1a",
-  },
-};
-
-export const listItemR = {
-  border: "1px solid #1a1a1a",
-  borderRadius: "25px",
-  marginTop: "2px",
-  marginBottom: "2px",
-  width: "90%",
-  boxShadow: 2,
-  color: "#1a1a1a",
-  backgroundColor: "#ffffff",
-};
-
-export const listItemRat = {
-  border: "1px solid #1a1a1a",
-  borderRadius: "25px",
-  marginTop: "2px",
-  marginBottom: "2px",
-  boxShadow: 2,
-  color: "#1a1a1a",
-  backgroundColor: "#ffffff",
-};
-
 export const butNot = {
-  backgroundColor: "#1a1a1a",
+  backgroundColor: "#006400",
   color: "#ffffff",
-  mb: 1,
   "&:hover": {
     backgroundColor: "#b30000",
   },
-}
-
-export const typography = { fontWeight: "bold", color: "#1a1a1a", mt:10, mb:2 };
-
-export const typographyD = { fontWeight: "bold", color: "#1a1a1a", mt: 10 };
-
-export const signinGrid = {
-  backgroundImage: `url('images/Patient_SignIn.png')`,
-  backgroundRepeat: "no-repeat",
-  backgroundColor: (t) =>
-    t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
-export const signupGrid = {
-  backgroundImage: `url('images/Patient_Signup.png')`,
-  backgroundRepeat: "no-repeat",
-  backgroundColor: (t) =>
-    t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
-export const box = {
-  my: 8,
-  mx: 4,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
-export const paperS = {
-  backgroundColor: "#f5dede",
-}
-
-export const controls = {
-  top: "auto",
-  bottom: 0,
-  backgroundColor: "#021117",
-  alignItems: "center",
-};
-
-export const controlsToolbar = {
-  alignItems: "center",
-  [theme.breakpoints.down("md")]: {
-    paddingLeft: "0",
-    marginLeft: "0",
-  },
-};
-
-export const listItemIcon = {
-  color: "#fff",
-};
-
-export const listItemText = {
-  color: "#fff",
 };

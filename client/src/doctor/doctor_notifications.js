@@ -4,14 +4,17 @@ import Navbar from "./navbar";
 import { db } from "../firebase";
 import { Button, Container, List, ListItem, Typography } from "@mui/material";
 import MarkChatReadIcon from "@mui/icons-material/MarkChatRead";
-import { container, listItemR, typography, butNot } from "./styles";
+import { container, listItemA, typography, butNot } from "./styles";
+import { createTheme } from "@mui/material/styles";
 
-const Patient_Notifications = () => {
+const theme = createTheme();
+
+const Doctor_Notifications = () => {
   const [notifications, setNotifications] = useState([]);
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    db.collection("patients")
+    db.collection("doctors")
       .doc(currentUser.uid)
       .collection("notifications")
       .orderBy("sentAt", "desc")
@@ -21,7 +24,7 @@ const Patient_Notifications = () => {
   }, []);
 
   const handleReadNotifications = () => {
-    db.collection("patients").doc(currentUser.uid).update({
+    db.collection("doctors").doc(currentUser.uid).update({
       unreadCount: 0,
     });
   };
@@ -35,7 +38,7 @@ const Patient_Notifications = () => {
         </Typography>
         <Button
           size="large"
-          sx={{ ...butNot, ml: 14, mb: 2 }}
+          sx={{ ...butNot, ml: 14, mb: 1 }}
           startIcon={<MarkChatReadIcon />}
           onClick={handleReadNotifications}
         >
@@ -44,7 +47,7 @@ const Patient_Notifications = () => {
         <List>
           {notifications.map((notification) => {
             return (
-              <ListItem sx={{ ...listItemR, ml: 12 }}>
+              <ListItem sx={{...listItemA, ml:10, width:"90%"}}>
                 <Typography>
                   {notification.message} <br />{" "}
                   {new Date(
@@ -63,4 +66,4 @@ const Patient_Notifications = () => {
   );
 };
 
-export default Patient_Notifications;
+export default Doctor_Notifications;
