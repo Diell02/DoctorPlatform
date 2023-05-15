@@ -80,8 +80,8 @@ const Doctor = () => {
                         Working Hours: {" "}
                         {new Date(doctor.startTime.seconds * 1000).getHours()}:
                         {new Date(doctor.startTime.seconds * 1000).getMinutes()}
-                        0 - {new Date(doctor.endTime.seconds * 1000).getHours()}
-                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}0
+                         - {new Date(doctor.endTime.seconds * 1000).getHours()}
+                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}
                         hrs
                       </Typography>
                     </>

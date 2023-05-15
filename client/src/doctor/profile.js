@@ -64,9 +64,9 @@ const Doctor_Profile = () => {
                     <Typography>
                       Working Hours :{" "}
                       {new Date(doctor.startTime.seconds * 1000).getHours()}:
-                      {new Date(doctor.startTime.seconds * 1000).getMinutes()}0
+                      {new Date(doctor.startTime.seconds * 1000).getMinutes()}
                       - {new Date(doctor.endTime.seconds * 1000).getHours()}:
-                      {new Date(doctor.endTime.seconds * 1000).getMinutes()}0
+                      {new Date(doctor.endTime.seconds * 1000).getMinutes()}
                       hrs
                     </Typography>
                     <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
