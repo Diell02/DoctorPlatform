@@ -262,7 +262,7 @@ const Complete_Details = (props) => {
             </Grid>
 
             <Grid item xs={12}>
-              <Button type="submit" variant="contained">
+              <Button id="update" type="submit" variant="contained">
                 Update
               </Button>
             </Grid>

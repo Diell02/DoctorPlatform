@@ -13,7 +13,7 @@ const Doctor_Dashboard = () => {
     <>
       <Navbar />
       <Container maxWidth="xl" sx={container}>
-        <Grid container spacing={3} justifyContent="center" sx={{ flexWrap: 'nowrap', ml: 6 }}>
+        <Grid container spacing={3} justifyContent="center" sx={{ flexWrap: 'nowrap', ml: 6 }} id="dashboard-container">
           <Grid item sx={{ ...uploadGridItem, display: 'flex', justifyContent: 'flex-end', ml: 6 }}>
             <Paper sx={upload}>
               <Upload uid={currentUser.uid} />

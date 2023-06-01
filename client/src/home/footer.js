@@ -70,7 +70,7 @@ const Footer = () => {
             <br/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <IconButton onClick={handleScrollToTop} sx={{ ...iconButton, float: "right" }}>
+            <IconButton id="scrollToTopButton" onClick={handleScrollToTop} sx={{ ...iconButton, float: "right" }}>
               <ArrowUpwardIcon />
             </IconButton>
             <br />

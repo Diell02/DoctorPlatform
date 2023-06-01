@@ -213,6 +213,7 @@ const Doctor_Signup = () => {
 
               <Button
                 type="submit"
+                id="signup-button"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 2, mb: 1 }}

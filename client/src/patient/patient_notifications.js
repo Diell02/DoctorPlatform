@@ -34,6 +34,7 @@ const Patient_Notifications = () => {
           Notifications
         </Typography>
         <Button
+          id="mark-as-read"
           size="large"
           sx={{ ...butNot, ml: 14, mb: 2 }}
           startIcon={<MarkChatReadIcon />}

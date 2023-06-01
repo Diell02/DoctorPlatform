@@ -40,7 +40,7 @@ const View_Doctors = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="xl" sx={container}>
+      <Container maxWidth="xl" sx={container} id="view-doctors">
         <Typography align="center" variant="h4" sx={typography}>
           Book Appointment
         </Typography>
@@ -130,6 +130,7 @@ const View_Doctors = () => {
 
                             <Grid item xs={12} sm={3} md={3} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                               <Button
+                                id="see-more-button"
                                 href={`/doctor_profile/${doctor.uid}`}
                                 target="_blank"
                                 sx={{ backgroundColor: "#ffffff", color:"#1a1a1a",

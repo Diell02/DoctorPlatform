@@ -164,7 +164,7 @@ const Book_Appointment = (props) => {
           </DialogContent>
           <DialogActions>
             <Button onClick={() => handleClose()}>Cancel</Button>
-            <Button type="submit">Book</Button>
+            <Button id="book-button" type="submit">Book</Button>
           </DialogActions>
         </form>
       </Dialog>

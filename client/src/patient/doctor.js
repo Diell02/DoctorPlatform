@@ -31,11 +31,11 @@ const Doctor = () => {
   return (
     <div>
       <Navbar />
-      <Container maxWidth="xl" sx={container}>
+      <Container maxWidth="xl" sx={container} >
         {doctors.map((doctor) => {
           if (doctor.uid === uid)
             return (
-              <Grid container spacing={3} sx={{ml:10}}>
+              <Grid container spacing={3} sx={{ ml: 10 }}>
                 <Grid item xs={12}>
                   <Typography align="center" variant="h4" sx={typography}>
                   Profile of Dr. {doctor.name}

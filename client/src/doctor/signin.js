@@ -117,6 +117,7 @@ const Doctor_Signin = () => {
 
               <Button
                 type="submit"
+                id="signin-button"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
@@ -159,7 +160,7 @@ const Doctor_Signin = () => {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/doctor_signup" variant="body2">
+                  <Link id="signup-link" href="/doctor_signup" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
