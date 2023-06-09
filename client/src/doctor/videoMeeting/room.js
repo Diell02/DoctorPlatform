@@ -156,9 +156,29 @@ const Doctor_Room = (props) => {
   function toggleMuteVideo() {
     if (stream) {
       setVideoMuted(!videoMuted);
-      stream.getVideoTracks()[0].enabled = videoMuted;
+      const videoTrack = stream.getVideoTracks()[0];
+      videoTrack.enabled = !videoMuted;
+      if (!videoMuted) {
+        videoTrack.stop();
+      } else {
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then((newStream) => {
+            const newVideoTrack = newStream.getVideoTracks()[0];
+            videoTrack.enabled = true;
+            setStream(newStream);
+            userVideo.current.srcObject = newStream;
+            peersRef.current.forEach((peer) => {
+              peer.peer.replaceTrack(videoTrack, newVideoTrack, stream);
+            });
+          })
+          .catch((error) => {
+            console.error("Error accessing video stream:", error);
+          });
+      }
     }
   }
+
 
   let audioControl;
   if (audioMuted) {

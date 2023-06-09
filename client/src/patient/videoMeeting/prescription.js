@@ -17,6 +17,7 @@ import {
 import MedicationIcon from "@mui/icons-material/Medication";
 import DownloadIcon from "@mui/icons-material/Download";
 import { jsPDF } from "jspdf";
+import "jspdf-autotable";
 
 const Prescription = (props) => {
   const [open, setOpen] = useState(false);
@@ -82,29 +83,113 @@ const Prescription = (props) => {
   };
 
   const downloadPrescription = () => {
-    var doc = new jsPDF();
-    var i = 20;
-    var j = 120;
-    doc.setFontSize("15");
-    doc.addImage("/images/DocPlatform.png", "PNG", 5, 5, 200, 15);
-    doc.text("Date: ", 20, 30);
-    doc.text(date, 50, 30);
-    doc.text("Doctor: ", 20, 40);
-    doc.text(doctorName, 50, 40);
-    doc.text("Medical Speciality: ", 20, 50);
-    doc.text(doctorSpeciality, 70, 50);
-    doc.text("Patient: ", 20, 70);
-    doc.text(patientName, 50, 70);
-    doc.text("Age: ", 20, 80);
-    doc.text(patientAge, 50, 80);
-    doc.text("Gender: ", 20, 90);
-    doc.text(patientGender, 50, 90);
-    doc.text("Prescription: ", 20, 110);
-    prescriptions.map((prescript) => {
-      doc.text(prescript.prescription, i, j);
-      j = j + 10;
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.width;
+    const date = new Date().toLocaleDateString("en-US");
+    let i = pageWidth / 2;
+    let j = 60;
+
+    doc.setFillColor("#1a1a1a");
+    doc.rect(0, 0, pageWidth, doc.internal.pageSize.height, "F");
+
+    const imgData = "/images/DocPlatform.png";
+    doc.addImage(imgData, "PNG", 5, 25, 200, 15);
+
+    doc.setTextColor("#ffffff");
+
+    doc.setFontSize(12);
+    doc.text("Date: " + date, pageWidth - 40, 10);
+
+    doc.setFontSize(14);
+    doc.text("Doctor Information", i, j, { align: "center" });
+    j += 10;
+    doc.autoTable({
+      startY: j,
+      headStyles: { fillColor: "#1a1a1a", textColor: "#ffffff", lineWidth: 0.1, lineColor: "#ffffff" },
+      body: [
+        ["Name", doctorName],
+        ["Speciality", doctorSpeciality],
+      ],
+      styles: {
+        cellPadding: { top: 5, right: 5, bottom: 5, left: 5 },
+        fontSize: 10,
+        valign: "middle",
+        halign: "center",
+        fillColor: "#1a1a1a",
+        textColor: "#ffffff",
+        fontStyle: "bold",
+        lineWidth: 0.1,
+        lineColor: "#ffffff",
+      },
+      theme: "grid",
     });
-    doc.save("doctor_prescription.pdf");
+    j = doc.lastAutoTable.finalY + 20;
+
+    doc.setFontSize(14);
+    doc.text("Patient Information", i, j, { align: "center" });
+    j += 10;
+    doc.autoTable({
+      startY: j,
+      headStyles: { fillColor: "#1a1a1a", textColor: "#ffffff", lineWidth: 0.1, lineColor: "#ffffff" },
+      body: [
+        ["Name", patientName],
+        ["Age", patientAge],
+        ["Gender", patientGender],
+      ],
+      styles: {
+        cellPadding: { top: 5, right: 5, bottom: 5, left: 5 },
+        fontSize: 10,
+        valign: "middle",
+        halign: "center",
+        fillColor: "#1a1a1a",
+        textColor: "#ffffff",
+        fontStyle: "bold",
+        lineWidth: 0.1,
+        lineColor: "#ffffff",
+      },
+      theme: "grid",
+    });
+    j = doc.lastAutoTable.finalY + 20;
+
+    doc.setFontSize(14);
+    doc.text("Prescription Information", i, j, { align: "center" });
+    j += 10;
+
+    const tableColumns = ["Prescription", "Medication", "Duration of Medication"];
+    const tableData = prescriptions.map((prescript) => [
+      prescript.prescription,
+      prescript.medication,
+      prescript.durationMed,
+    ]);
+
+    const transformedData = [];
+    for (let k = 0; k < tableColumns.length; k++) {
+      const column = tableColumns[k];
+      const values = tableData.map((row) => row[k]);
+      transformedData.push([column, ...values]);
+    }
+
+    const tableStyles = {
+      cellPadding: { top: 5, right: 5, bottom: 5, left: 5 },
+      fontSize: 10,
+      valign: "middle",
+      halign: "center",
+      fillColor: "#1a1a1a",
+      textColor: "#ffffff",
+      fontStyle: "bold",
+      lineWidth: 0.1,
+      lineColor: "#ffffff",
+    };
+
+    doc.autoTable({
+      startY: j,
+      headStyles: { fillColor: "#1a1a1a", textColor: "#ffffff", lineWidth: 0.1, lineColor: "#ffffff" },
+      body: transformedData,
+      styles: tableStyles,
+      theme: "grid",
+    });
+
+    doc.save("patient_prescription.pdf");
   };
 
   return (
